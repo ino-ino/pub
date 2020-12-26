@@ -15,9 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', 'PostController@index');
+Route::resource('pubs', 'PubController');
 
-Route::resource('posts', 'PostController');
+    if (env('APP_ENV') === 'local') {
+        URL::forceScheme('https');
+ } 
+
+Route::get('/', 'PubController@index');
+
+Route::resource('pubs', 'PubController');
 
 if (env('APP_ENV') === 'local') { 
     URL::forceScheme('https');

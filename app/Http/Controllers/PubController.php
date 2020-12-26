@@ -14,7 +14,8 @@ class PubController extends Controller
      */
     public function index()
     {
-        //
+        $pubs = Pub::all();
+        return view('pubs.index',compact('pubs'));
     }
 
     /**
@@ -35,7 +36,12 @@ class PubController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pub = new Pub();
+        $pub->title = $request->input('title');
+        $pub->content = $request->input('content');
+        $pub->save();
+        
+        return redirect()->route('pubs.show', ['id' => $pub->id])->with('message', 'Pub was successfully created.');
     }
 
     /**
@@ -46,7 +52,7 @@ class PubController extends Controller
      */
     public function show(Pub $pub)
     {
-        //
+        return view('pubs.show', compact('pub'));
     }
 
     /**
@@ -57,7 +63,7 @@ class PubController extends Controller
      */
     public function edit(Pub $pub)
     {
-        //
+        return view('pubs.edit', compact('pub'));
     }
 
     /**
@@ -69,8 +75,13 @@ class PubController extends Controller
      */
     public function update(Request $request, Pub $pub)
     {
-        //
+        $pub->title = $request->input('title');
+        $pub->content = $request->input('content');
+        $pub->save();
+
+        return redirect()->route('pubs.show', ['id' => $pub->id])->with('message', 'Pub was successfully updated.');
     }
+    
 
     /**
      * Remove the specified resource from storage.
@@ -80,6 +91,8 @@ class PubController extends Controller
      */
     public function destroy(Pub $pub)
     {
-        //
+        $pub->delete();
+
+        return redirect()->route('pubs.index');
     }
 }
