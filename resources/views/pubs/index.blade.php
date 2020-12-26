@@ -1,3 +1,13 @@
+@extends('layouts.layouts')
+
+@section('title', 'Simple Board')
+
+@section('content')
+
+    @if (session('message'))
+        {{ session('message') }}
+    @endif
+
 <h1>Pubs</h1>
 
 @foreach($pubs as $pub)
@@ -12,3 +22,5 @@
 @endforeach
 
 <a href="/pubs/create">New Pub</a> 
+
+@endsection
