@@ -36,6 +36,12 @@ class PubController extends Controller
      */
     public function store(Request $request)
     {
+           $request->validate([
+                "title"=>"required",
+                "content"=>"required",
+            
+            ]);
+        
         $pub = new Pub();
         $pub->title = $request->input('title');
         $pub->content = $request->input('content');
@@ -75,6 +81,12 @@ class PubController extends Controller
      */
     public function update(Request $request, Pub $pub)
     {
+            $request->validate([
+                "title"=>"required",
+                "content"=>"required",
+            
+            ]);
+            
         $pub->title = $request->input('title');
         $pub->content = $request->input('content');
         $pub->save();
