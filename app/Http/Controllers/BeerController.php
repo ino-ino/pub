@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Pub;
+use App\beer;
 use Illuminate\Http\Request;
 
-class PubController extends Controller
+class beerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class PubController extends Controller
      */
     public function index()
     {
-        $pubs = Pub::all();
-        return view('pubs.index',compact('pubs'));
+        $beers = Beer::all();
+        return view('beers.index',compact("beers"));
     }
 
     /**
@@ -25,7 +25,7 @@ class PubController extends Controller
      */
     public function create()
     {
-        return view('pubs.create');
+        return view("beers.create");
     }
 
     /**
@@ -36,51 +36,50 @@ class PubController extends Controller
      */
     public function store(Request $request)
     {
-           $request->validate([
-                "title"=>"required",
-                "content"=>"required",
+        $request->validate([
+            'title' => 'required',
+            'content' => 'required',
             // 多分変更場所
-            ]);
-        
-        $pub = new Pub();
-        $pub->title = $request->input('title');
-        $pub->content = $request->input('content');
-        $pub->save();
+         ]);
+         
+        $beer = new Beer();
+        $beer->title = $request->input('title');
+        $beer->content = $request->input('content');
+        $beer->save();
         // 多分変更場所
-        
-        return redirect()->route('pubs.show', ['id' => $pub->id])->with('message', 'Pub was successfully created.');
+        return redirect()->route('beers.show', ['id' => $beer->id])->with('message', 'Beer was successfully created.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Pub  $pub
+     * @param  \App\beer  $beer
      * @return \Illuminate\Http\Response
      */
-    public function show(Pub $pub)
+    public function show(beer $beer)
     {
-        return view('pubs.show', compact('pub'));
+        return view("beers.show", compact("beer"));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Pub  $pub
+     * @param  \App\beer  $beer
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pub $pub)
+    public function edit(beer $beer)
     {
-        return view('pubs.edit', compact('pub'));
+        return view("beers.edit", compact("beer"));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Pub  $pub
+     * @param  \App\beer  $beer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pub $pub)
+    public function update(Request $request, beer $beer)
     {
         $request->validate([
                 "title"=>"required",
@@ -88,24 +87,24 @@ class PubController extends Controller
             // 多分変更場所
             ]);
             
-        $pub->title = $request->input('title');
-        $pub->content = $request->input('content');
-        $pub->save();
+        $beer->title = $request->input('title');
+        $beer->content = $request->input('content');
+        $beer->save();
 
-        return redirect()->route('pubs.show', ['id' => $pub->id])->with('message', 'Pub was successfully updated.');
+        return redirect()->route('beers.show', ['id' => $beer->id])->with('message', 'Beer was successfully updated.');
     }
-    
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Pub  $pub
+     * @param  \App\beer  $beer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pub $pub)
+    public function destroy(beer $beer)
+    // 最初のbeerの頭文字が小文字！どう直せば？
     {
-        $pub->delete();
+        $beer->delete();
 
-        return redirect()->route('pubs.index');
+        return redirect()->route('beers.index');
     }
 }

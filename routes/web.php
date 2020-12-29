@@ -28,3 +28,18 @@ Route::resource('pubs', 'PubController');
 if (env('APP_ENV') === 'local') { 
     URL::forceScheme('https');
 }
+
+
+Route::resource('beers', 'BeerController');
+
+    if (env('APP_ENV') === 'local') {
+        URL::forceScheme('https');
+ } 
+
+Route::get('/', 'BeerController@index');
+
+Route::resource('beers', 'BeerController');
+
+if (env('APP_ENV') === 'local') { 
+    URL::forceScheme('https');
+}

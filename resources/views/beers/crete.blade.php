@@ -5,7 +5,7 @@
 @section('url')
 <!--正解？⬆︎-->
 
-<h1>New Pub</h1>
+<h1>New Beer</h1>
 
 @if ($errors->any())
     <div class="alert alert-danger">
@@ -17,7 +17,7 @@
     </div>
 @endif
 
-<form method="PUB" action="/pubs">
+<form method="BEER" action="/beers">
     {{ csrf_field() }}
     <div class="form-group">
         <label for="exampleInputEmail1">Title</label>
@@ -31,7 +31,7 @@
     <button type="submit" class="btn btn-outline-primary">Submit</button>
 </form>
 
-<a href="/pubs">Back</a>
+<a href="/beers">Back</a>
 
 @endsection
 
