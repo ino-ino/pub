@@ -1,9 +1,8 @@
 @extends('layouts.layouts')
 
-@section('name', 'Simple Board')
+@section('title', 'Simple Board')
 
-@section('url')
-<!--正解？⬆︎-->
+@section('content')
 
 <h1>New Pub</h1>
 
@@ -17,7 +16,7 @@
     </div>
 @endif
 
-<form method="PUB" action="/pubs">
+<form method="POST" action="/pubs">
     {{ csrf_field() }}
     <div class="form-group">
         <label for="exampleInputEmail1">Title</label>

@@ -43,8 +43,8 @@ class PubController extends Controller
             ]);
         
         $pub = new Pub();
-        $pub->title = $request->input('title');
-        $pub->content = $request->input('content');
+        $pub->name = $request->input('title');
+        $pub->url = $request->input('content');
         $pub->save();
         // 多分変更場所
         
@@ -88,8 +88,8 @@ class PubController extends Controller
             // 多分変更場所
             ]);
             
-        $pub->title = $request->input('title');
-        $pub->content = $request->input('content');
+        $pub->name = $request->input('title');
+        $pub->url = $request->input('content');
         $pub->save();
 
         return redirect()->route('pubs.show', ['id' => $pub->id])->with('message', 'Pub was successfully updated.');
