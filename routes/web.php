@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+// pub
 Route::resource('pubs', 'PubController');
 
     if (env('APP_ENV') === 'local') {
@@ -30,6 +32,9 @@ if (env('APP_ENV') === 'local') {
 }
 
 
+
+
+// beer
 Route::resource('beers', 'BeerController');
 
     if (env('APP_ENV') === 'local') {
@@ -39,6 +44,7 @@ Route::resource('beers', 'BeerController');
 Route::get('/', 'BeerController@index');
 
 Route::resource('beers', 'BeerController');
+// これ２個あるけど消していいのか？
 
 if (env('APP_ENV') === 'local') { 
     URL::forceScheme('https');
