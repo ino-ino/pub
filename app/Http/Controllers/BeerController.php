@@ -99,6 +99,8 @@ class BeerController extends Controller
      */
     public function destroy(Beer $beer)
     {
-        //
+        $beer->delete();
+        
+        return redirect()->route("beers.index");
     }
 }
