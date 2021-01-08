@@ -15,15 +15,15 @@ class CreateBeersTable extends Migration
     {
         Schema::create('beers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string("name")->nullable()->change();
-            $table->string("manufacturer")->nullable()->change();
-            $table->text("memo")->nullable()->change();
-            $table->string("image_url")->nullable()->change();;
-            $table->integer("sharpness")->nullable()->change();;
-            $table->integer("body")->nullable()->change();;
-            $table->integer("aroma")->nullable()->change();;
-            $table->integer("flavor")->nullable()->change();;
-            $table->integer("throat")->nullable()->change();;
+            $table->string("name");
+            $table->string("manufacturer")->nullable();
+            $table->text("memo");
+            $table->string("image_url")->nullable();
+            $table->integer("sharpness")->nullable();
+            $table->integer("body")->nullable();
+            $table->integer("aroma")->nullable();
+            $table->integer("flavor")->nullable();
+            $table->integer("throat")->nullable();
             $table->timestamps();
         });
         // null許可の方法はあっているはず。
@@ -38,15 +38,6 @@ class CreateBeersTable extends Migration
     public function down()
     {
         
-        $table->string("name")->nullable(false)->change();
-        $table->string("manufacturer")->nullable(false)->change();
-        $table->string("memo")->nullable(false)->change();
-        $table->string("image_url")->nullable(false)->change();
-        $table->string("sharpness")->nullable(false)->change();
-        $table->string("body")->nullable(false)->change();
-        $table->string("aroma")->nullable(false)->change();
-        $table->string("flavor")->nullable(false)->change();
-        $table->string("throat")->nullable(false)->change();
         Schema::dropIfExists('beers');
     }
 }

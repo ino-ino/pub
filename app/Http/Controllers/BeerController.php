@@ -60,7 +60,7 @@ class BeerController extends Controller
     
     {
         
-        return view('berrs.show',compact('beer') );
+        return view('beers.show',compact('beer') );
         // compact('beer')でビューに変数を渡す
     }
 
@@ -72,7 +72,7 @@ class BeerController extends Controller
      */
     public function edit(Beer $beer)
     {
-        return viwe("beers.edit",compact("beer"));
+        return view("beers.edit",compact("beer"));
     }
 
     /**
@@ -88,7 +88,7 @@ class BeerController extends Controller
         $beer->memo = $request->input("content");
         $beer->save();
         
-        return redirect()->route("beer.show",['id' => $beer->id])->with('message', 'Beer was successfully updated.');
+        return redirect()->route("beers.show",['id' => $beer->id])->with('message', 'Beer was successfully updated.');
     }
 
     /**

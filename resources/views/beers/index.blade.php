@@ -19,7 +19,7 @@
     <a href="/beers/{{ $beer->id }}/edit">Edit</a>
     <!--/beers/:id/editへのリンク-->
     
-    <form action="/posts/{{ $post->id }}" method="POST" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
+    <form action="/beers/{{ $beer->id }}" method="POST" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
         <input type="hidden" name="_method" value="DELETE">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <button type="submit">Delete</button>

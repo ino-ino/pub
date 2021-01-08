@@ -15,21 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+if (env('APP_ENV') === 'local') {
+    URL::forceScheme('https');
+} 
+
 
 // pub
 Route::resource('pubs', 'PubController');
-
-    if (env('APP_ENV') === 'local') {
-        URL::forceScheme('https');
- } 
-
-Route::get('/', 'PubController@index');
-
-Route::resource('pubs', 'PubController');
-
-if (env('APP_ENV') === 'local') { 
-    URL::forceScheme('https');
-}
 
 
 
@@ -37,15 +29,5 @@ if (env('APP_ENV') === 'local') {
 // beer
 Route::resource('beers', 'BeerController');
 
-    if (env('APP_ENV') === 'local') {
-        URL::forceScheme('https');
- } 
-
 Route::get('/', 'BeerController@index');
 
-Route::resource('beers', 'BeerController');
-// これ２個あるけど消していいのか？
-
-if (env('APP_ENV') === 'local') { 
-    URL::forceScheme('https');
-}
