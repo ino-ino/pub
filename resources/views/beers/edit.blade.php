@@ -1,3 +1,9 @@
+@extends('layouts.layouts')
+
+@section('title', 'Simple Board')
+
+@section('content')
+
 <form method="POST" action="/beers/{{ $beer->id }}">
     <!--アクションされるのは/beers/の$beer->id-->
     {{ csrf_field() }}
@@ -8,3 +14,5 @@
     <input type="text" name="content" value="{{ $beer->memo }}">
     <input type="submit">
 </form>
+
+@endsection

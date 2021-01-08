@@ -1,3 +1,17 @@
+@extends('layouts.layouts')
+<!--使用するレイアウトのファイルの宣言-->
+
+@section('title', 'Simple Board')
+<!-- layouts.blade.php内に定義している yield title に埋め込むというコード-->
+
+@section('content')
+<!--endsectionまでが、layouts.blade.phpのcontentに埋め込まれるよ〜と。-->
+
+　　@if (session('message'))
+        {{ session('message') }}
+    @endif
+<!--bootstrap4の導入-->
+
 <h1>Beeeeeeeeer!</h1>
 
 @foreach($beers as $beer)
@@ -21,3 +35,5 @@
 
 
 <a href ="/beers/create">new</a>
+
+@endsection

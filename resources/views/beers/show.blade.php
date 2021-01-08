@@ -1,3 +1,9 @@
+@extends('layouts.layouts')
+
+@section('title', 'Simple Board')
+
+@section('content')
+
 @if (session('massage'))
     {{ session('message') }}
 @endif
@@ -8,3 +14,5 @@
 
 <a href="/beers/{{ $beer->id }}/edit">Edit</a>
 <!--各投稿の閲覧ページからも編集画面へ移動できるよう-->
+
+@endsection
