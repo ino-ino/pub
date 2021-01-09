@@ -16,7 +16,6 @@
             
         <div class="d-flex" style="height: 36.4px;">
             <!--ボタンレイアウトはbootstrap4のflexというユーティリティらしい。※ユーティリティ？-->
-            <a href="/beers/{{ $beer->id }}" class="btn btn-outline-primary">Show</a>
             <a href="/beers/{{ $beer->id }}/edit" class="btn btn-outline-primary">Edit</a>
              <!--/beers/:id/editとshowへのリンク btn-outline-primaryでボタンの色が変わるというおしゃれなセレクター-->
         </div>
@@ -24,7 +23,7 @@
     </div>
 <!--新しい投稿をするとshowアクションが呼び出しされる。作成した内容が表示される-->
 
-<a href="/beers/{{ $beer->id }}/edit">Edit</a>
+
 <a href="/beers">Back</a>
 <!--各投稿の閲覧ページからも編集画面へ移動できるよう-->
 
