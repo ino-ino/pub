@@ -17,4 +17,8 @@
     <input type="submit">
 </form>
 
+<a href="/beers/{{ $beer->id }}">Show</a>
+<a href="/beers">Back</a>
+
+
 @endsection
