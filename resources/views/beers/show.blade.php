@@ -9,7 +9,9 @@
 @endif
 
 {{ $beer->name }}
-{{ $beer->memo }} 
+{{ $beer->memo }}
+{{ $beer->manufacturer }}
+{{ $beer->image_url }}
 <!--新しい投稿をするとshowアクションが呼び出しされる。作成した内容が表示される-->
 
 <a href="/beers/{{ $beer->id }}/edit">Edit</a>

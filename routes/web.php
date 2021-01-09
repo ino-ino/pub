@@ -30,4 +30,4 @@ Route::resource('pubs', 'PubController');
 Route::resource('beers', 'BeerController');
 
 Route::get('/', 'BeerController@index');
-
+// 一番下のとこが適応される。もし/postに初期設定したいなら、BeerController@indexをPostControllerに変更する、と。

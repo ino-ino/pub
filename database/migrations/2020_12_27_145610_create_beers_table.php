@@ -19,6 +19,7 @@ class CreateBeersTable extends Migration
             $table->string("manufacturer")->nullable();
             $table->text("memo");
             $table->string("image_url")->nullable();
+            
             $table->integer("sharpness")->nullable();
             $table->integer("body")->nullable();
             $table->integer("aroma")->nullable();
@@ -26,18 +27,16 @@ class CreateBeersTable extends Migration
             $table->integer("throat")->nullable();
             $table->timestamps();
         });
-        // null許可の方法はあっているはず。
-        // 必須条件じゃなくする方法がnull許可で、許可したはずなのに未だエラー。うーん
-    }
 
     /**
      * Reverse the migrations.
      *
      * @return void
      */
+     
     public function down()
     {
-        
         Schema::dropIfExists('beers');
     }
 }
+
