@@ -14,6 +14,7 @@ class CreateBeersTable extends Migration
     public function up()
     {
         Schema::create('beers', function (Blueprint $table) {
+            // 
             $table->bigIncrements('id');
             $table->string("name");
             $table->string("manufacturer")->nullable();
@@ -25,6 +26,9 @@ class CreateBeersTable extends Migration
             $table->integer("aroma")->nullable();
             $table->integer("flavor")->nullable();
             $table->integer("throat")->nullable();
+            
+          
+            
             $table->timestamps();
         });
 
