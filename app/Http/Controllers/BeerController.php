@@ -12,11 +12,22 @@ class BeerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     
+     
     public function index()
     {
+        
+        
         $beers = Beer::all();
+        // echo "<pre>";
+        // print_r($beers);
+        // echo "</pre>";
+        // exit(1);
         // 作成されてるすべての投稿をBeerモデルに取得
+        
+        
         return view("beers.index",compact('beers'));
+    
     }
     // 画面表示
 
@@ -27,7 +38,15 @@ class BeerController extends Controller
      */
     public function create()
     {
-        return view("beers.create");
+        $sharpness = Beer::$sharpness;
+        
+        $body = Beer::$body;
+        $aroma = Beer::$aroma;
+        $flavor = Beer::$flavor;
+        $throat = Beer::$throat;
+        
+        
+        return view("beers.create",compact('sharpness','body','aroma','flavor','throat'));
     }
 
     /**
@@ -49,7 +68,10 @@ class BeerController extends Controller
         // titleとcontentはブラウザからcloud9にデータを渡す為の名前。ブラウザから受け取ったtitle,contentはcloud9で今回はname,memoに変換されている
         // ややこしいので、ブラウザから受け取る名前とcloud9からLaravelへ渡す名前を一致させてあげる。
         // 構造的に二段階。ブラウザ->cloud9(今回)->Laravel(フレームワーク)んで、Laravelはmvcモデルなのでモデルで受け取り、テンプレートで表示、コントローラーで指示、かな
+        
+        $beer->sharpness = $request->input('sharpness');
         $beer->save();
+        
         return redirect()->route('beers.show',['id' => $beer->id])->with('message', 'Beer was successfully created.');
     }
 
@@ -60,12 +82,16 @@ class BeerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Beer $beer)
-    // 閲覧ページ
+    // editで作ったものを閲覧できるページ
     
     {
+        //   echo "<pre>";
+        //   print_r($beer);exit(1);
+        // sharpnessの値が来ていない。
         
-        return view('beers.show',compact('beer') );
+        return view('beers.show',compact ('beer','sharpness','sharpnessChecked'));
         // compact('beer')でビューに変数を渡す
+        // compact:
     }
 
     /**
@@ -75,8 +101,27 @@ class BeerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Beer $beer)
+    // 投稿を作る場所、sharpnessの値を選んだものをshowに送りたい
     {
-        return view("beers.edit",compact("beer"));
+        
+        // echo "<pre>";
+        // print_r($beers);
+        // echo "</pre>";
+        // exit(1);
+        $sharpness = Beer::$sharpness;
+        
+        $body = Beer::$body;
+        $aroma = Beer::$aroma;
+        $flavor = Beer::$flavor;
+        $throat = Beer::$throat;
+       
+    
+        // Beerモデルの中のsharpnesssの値を、コントローラーのeditの$optionsに渡している。
+        // array()が省略されているだけ。これが連想配列。sharpnessに紐つけてあるのがBeerモデルの$sharpnessの値
+        
+        
+        return view("beers.edit",compact('beer','sharpness','body','aroma','flavor','throat'));
+        
     }
 
     /**

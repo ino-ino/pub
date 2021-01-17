@@ -23,6 +23,11 @@
             <p class="card-text">{{ $beer->manufacturer }}</p>
             <p class="card-text">{{ $beer->image_url }}</p>
             
+        </div>    
+    </div>
+
+
+            
         <div class="d-flex" style="height: 36.4px;">
             <!--ボタンレイアウトはbootstrap4のflexというユーティリティらしい。※ユーティリティ？-->
             <a href="/beers/{{ $beer->id }}" class="btn btn-outline-primary">Show</a>
@@ -46,8 +51,8 @@
 <!--beers.indexで受け取った$beerを...で展開-->
 <!--各投稿への一覧ページ作成が終わり-->
 
-
-
+ 
+   
 
 <a href ="/beers/create">new</a>
 

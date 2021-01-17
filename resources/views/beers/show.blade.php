@@ -14,6 +14,9 @@
             <p class="card-text">{{ $beer->manufacturer }}</p>
             <p class="card-text">{{ $beer->image_url }}</p>
             
+            
+            
+
         <div class="d-flex" style="height: 36.4px;">
             <!--ボタンレイアウトはbootstrap4のflexというユーティリティらしい。※ユーティリティ？-->
             <a href="/beers/{{ $beer->id }}/edit" class="btn btn-outline-primary">Edit</a>
