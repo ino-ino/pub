@@ -21,11 +21,11 @@ class CreateBeersTable extends Migration
             $table->text("memo");
             $table->string("image_url")->nullable();
             
-            $table->integer("sharpness")->nullable();
-            $table->integer("body")->nullable();
-            $table->integer("aroma")->nullable();
-            $table->integer("flavor")->nullable();
-            $table->integer("throat")->nullable();
+            $table->integer("sharpness");
+            $table->integer("body");
+            $table->integer("aroma");
+            $table->integer("flavor");
+            $table->integer("throat");
             
           
             

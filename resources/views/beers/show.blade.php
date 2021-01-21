@@ -13,8 +13,19 @@
             <p class="card-text">{{ $beer->memo }}</p>
             <p class="card-text">{{ $beer->manufacturer }}</p>
             <p class="card-text">{{ $beer->image_url }}</p>
-            
-            
+    
+               <!--sharpnessの値は来ているけど？-->
+                <p class="card-text">キレ{{ $beer->sharpness }} </p>
+                <!--こちら側が$beer->sharpnessだからだ-->
+                <p class="card-text">コク{{ $beer->body }}</p>
+                <p class="card-text">香り{{ $beer->aroma }}</p>
+                <p class='card-text'>味わい{{ $beer->flavor }}</p>
+                <p class='card-text'>のどごし{{ $beer->throat }}</p>
+                <!--ラジオボタンの意味が無い。-->
+           
+        </div>
+
+        </div>
             
 
         <div class="d-flex" style="height: 36.4px;">

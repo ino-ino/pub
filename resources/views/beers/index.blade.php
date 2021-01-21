@@ -26,7 +26,6 @@
         </div>    
     </div>
 
-
             
         <div class="d-flex" style="height: 36.4px;">
             <!--ボタンレイアウトはbootstrap4のflexというユーティリティらしい。※ユーティリティ？-->

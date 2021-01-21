@@ -26,17 +26,16 @@
         <label for="exampleInputPassword1">画像URL</label>
         <textarea class="form-control" name="image_url"></textarea>
     </div>
-    
+
 
 <div class="form-group row">
    <label for="radio01" class="col-md-4 col-form-label text-md-right">キレ</label>
    <div class="col-md-6">
        
-       @foreach($sharpness as $sharpness)
+       @foreach($sharpness as $v)
       <div class="form-check form-check-inline">
-         <label>{{ $sharpness }}
-         <input class="form-check-input" type="radio" name="sharpness" value="{{$sharpness }}"
-         @if( $sharpness === 4 )  checked="checked";  @endif>
+         <label>{{ $v }}
+         <input class="form-check-input" type="radio" name="sharpness" value="{{ $v }}">
         </div>      
       @endforeach
      
@@ -49,8 +48,7 @@
       @foreach($body as $body)
        <div class="form-check form-check-inline">
          <label>{{ $body }}
-         <input class="form-check-input" type="radio" name="body" value="{{$body}}"
-         @if( $body === 2 )  checked="checked";  @endif>
+         <input class="form-check-input" type="radio" name="body" value="{{$body}}">
         </div>      
       @endforeach
       
@@ -61,8 +59,7 @@
       @foreach($aroma as $aroma)
        <div class="form-check form-check-inline">
          <label>{{ $aroma }}
-         <input class="form-check-input" type="radio" name="aroma" value="{{$aroma}}"
-         @if( $aroma === 5 )  checked="checked";  @endif>
+         <input class="form-check-input" type="radio" name="aroma" value="{{$aroma}}">
         </div>      
       @endforeach
       
@@ -74,8 +71,7 @@
       @foreach($flavor as $flavor)
        <div class="form-check form-check-inline">
          <label>{{ $flavor }}
-         <input class="form-check-input" type="radio" name="flavor" value="{{$flavor}}"
-         @if( $flavor === 3 )  checked="checked";  @endif>
+         <input class="form-check-input" type="radio" name="flavor" value="{{$flavor}}">
         </div>      
       @endforeach
       
@@ -87,8 +83,7 @@
       @foreach($throat as $throat)
        <div class="form-check form-check-inline">
          <label>{{ $throat }}
-         <input class="form-check-input" type="radio" name="throat" value="{{$throat}}"
-         @if( $throat === 5 )  checked="checked";  @endif>
+         <input class="form-check-input" type="radio" name="throat" value="{{$throat}}">
         </div>      
       @endforeach
 </div>

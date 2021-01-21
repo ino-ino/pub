@@ -33,11 +33,12 @@
    <label for="radio01" class="col-md-4 col-form-label text-md-right">キレ</label>
    <div class="col-md-6">
        
-      @foreach($sharpness as $sharpness)
+      @foreach($sharpness as $v)
       <div class="form-check form-check-inline">
-         <label>{{ $sharpness }}
-         <input class="form-check-input" type="radio" name="sharpness" value="{{$sharpness }}"
-         @if( $sharpness === 4 )  checked="checked";  @endif>
+         <label>{{ $v }}
+         <input class="form-check-input" type="radio" name="sharpness" value="{{ $v }}"
+         @if( $v == $beer->sharpness )  checked="checked";  @endif>
+         <!--editとshowの値が等しければチェックだから、editの値が$beer->sharpnessだからだ-->
         </div>      
       @endforeach
      
@@ -47,11 +48,11 @@
   <label for="radio01" class="col-md-4 col-form-label text-md-right">コク</label>
   <div class="col-md-8">
       
-      @foreach($body as $body)
+      @foreach($body as $v)
        <div class="form-check form-check-inline">
-         <label>{{ $body }}
-         <input class="form-check-input" type="radio" name="body" value="{{$body}}"
-         @if( $body === 2 )  checked="checked";  @endif>
+         <label>{{ $v }}
+         <input class="form-check-input" type="radio" name="body" value="{{ $v }}"
+         @if( $v == $beer->body )  checked="checked";  @endif>
         </div>      
       @endforeach
       
@@ -59,11 +60,11 @@
   <label for="radio01" class="col-md-4 col-form-label text-md-right">香り</label>
   <div class="col-md-8">
       
-      @foreach($aroma as $aroma)
+      @foreach($aroma as $v)
        <div class="form-check form-check-inline">
-         <label>{{ $aroma }}
-         <input class="form-check-input" type="radio" name="aroma" value="{{$aroma}}"
-         @if( $aroma === 5 )  checked="checked";  @endif>
+         <label>{{ $v }}
+         <input class="form-check-input" type="radio" name="aroma" value="{{ $v }}"
+         @if( $v == $beer->aroma )  checked="checked";  @endif>
         </div>      
       @endforeach
       
@@ -72,11 +73,11 @@
   <label for="radio01" class="col-md-4 col-form-label text-md-right">味わい</label>
   <div class="col-md-8">
       
-      @foreach($flavor as $flavor)
+      @foreach($flavor as $v)
        <div class="form-check form-check-inline">
-         <label>{{ $flavor }}
-         <input class="form-check-input" type="radio" name="flavor" value="{{$flavor}}"
-         @if( $flavor === 3 )  checked="checked";  @endif>
+         <label>{{ $v }}
+         <input class="form-check-input" type="radio" name="flavor" value="{{ $v }}"
+         @if( $v == $beer->flavor )  checked="checked";  @endif>
         </div>      
       @endforeach
       
@@ -85,11 +86,11 @@
   <label for="radio01" class="col-md-4 col-form-label text-md-right">のどごし</label>
   <div class="col-md-8">
       
-      @foreach($throat as $throat)
+      @foreach($throat as $v)
        <div class="form-check form-check-inline">
-         <label>{{ $throat }}
-         <input class="form-check-input" type="radio" name="throat" value="{{$throat}}"
-         @if( $throat === 5 )  checked="checked";  @endif>
+         <label>{{ $v }}
+         <input class="form-check-input" type="radio" name="throat" value="{{ $v }}"
+         @if( $v == $beer->throat )  checked="checked";  @endif>
         </div>      
       @endforeach
 </div>
