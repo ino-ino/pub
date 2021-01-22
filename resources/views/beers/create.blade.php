@@ -6,7 +6,7 @@
 
 <h1>New Post</h1>
 
-<form method="POST" action="/beers">
+<form method="POST" action="/beers" enctype="multipart/form-data">
     <!--actionの/beersはAWSプレビューのアドレスの後ろにつけるやつ-->
     {{ csrf_field() }}
     <!--データ保護、getやpostの通信設定の際は必ず入れたほうが良さそう-->
@@ -22,16 +22,35 @@
         <label for="exampleInputPassword1">製造元</label>
         <textarea class="form-control" name="manufacturer"></textarea>
     </div>
-    <div class="form-group">
-        <label for="exampleInputPassword1">画像URL</label>
-        <textarea class="form-control" name="image_url"></textarea>
+    <div class="form-inline mt-4 mb-4 row">
+        <label for="exampleInputPassword1" class="col-2 d-flex justify-content-start">画像URL</label>
+        <img src="@" id="exampleInputPassword1-image-preview">
+        <!--教材だと＃、コメントアウト表記になります。-->
+        <input type="file" name="image_url" id="exampleInputPassword1">   
     </div>
+    
+    
+    
+　<!--おかしい場所-->
+    <script type="text/javascript">
+    $("#product-image").change(function() {
+         if (this.files && this.files[0]) {
+             let reader = new FileReader();
+             reader.onload = function(e) {
+                 $("product-image-preview").attr("src", e.target.result);
+             }
+             reader.readAsDataURL(this.files[0]);
+         }
+     });
+ </script>
+ 　<!--おかしい場所-->
+ 
 
 
-<div class="form-group row">
-   <label for="radio01" class="col-md-4 col-form-label text-md-right">キレ</label>
-   <div class="col-md-6">
-       
+
+　　　<div class="form-group">
+   　　<h6>キレ</h6>
+   
        @foreach($sharpness as $v)
       <div class="form-check form-check-inline">
          <label>{{ $v }}
@@ -39,57 +58,48 @@
         </div>      
       @endforeach
      
-  </div>
+  　　</div>
   
-<div class="form-group row">  
-  <label for="radio01" class="col-md-4 col-form-label text-md-right">コク</label>
-  <div class="col-md-8">
+　　　<div class="form-group">  
+  　　<h6>コク</h6>
       
-      @foreach($body as $body)
+      @foreach($body as $v)
        <div class="form-check form-check-inline">
-         <label>{{ $body }}
-         <input class="form-check-input" type="radio" name="body" value="{{$body}}">
+         <label>{{ $v }}
+         <input class="form-check-input" type="radio" name="body" value="{{ $v }}">
         </div>      
       @endforeach
+      </div>
       
-      <div class="form-group row">  
-  <label for="radio01" class="col-md-4 col-form-label text-md-right">香り</label>
-  <div class="col-md-8">
-      
-      @foreach($aroma as $aroma)
+      <div class="form-group">  
+  　　<h6>香り</h6>
+      @foreach($aroma as $v)
        <div class="form-check form-check-inline">
-         <label>{{ $aroma }}
-         <input class="form-check-input" type="radio" name="aroma" value="{{$aroma}}">
+         <label>{{ $v }}
+         <input class="form-check-input" type="radio" name="aroma" value="{{ $v }}">
+        </div>      
+      @endforeach
+      </div>
+       
+      <div class="form-group">  
+    　<h6>味わい</h6>
+      @foreach($flavor as $v)
+       <div class="form-check form-check-inline">
+         <label>{{ $v }}
+         <input class="form-check-input" type="radio" name="flavor" value="{{ $v }}">
         </div>      
       @endforeach
       
        
-      <div class="form-group row">  
-  <label for="radio01" class="col-md-4 col-form-label text-md-right">味わい</label>
-  <div class="col-md-8">
-      
-      @foreach($flavor as $flavor)
+      <div class="form-group">  
+      <h6>のどごし</h6>
+      @foreach($throat as $v)
        <div class="form-check form-check-inline">
-         <label>{{ $flavor }}
-         <input class="form-check-input" type="radio" name="flavor" value="{{$flavor}}">
-        </div>      
-      @endforeach
-      
-       
-      <div class="form-group row">  
-  <label for="radio01" class="col-md-4 col-form-label text-md-right">のどごし</label>
-  <div class="col-md-8">
-      
-      @foreach($throat as $throat)
-       <div class="form-check form-check-inline">
-         <label>{{ $throat }}
-         <input class="form-check-input" type="radio" name="throat" value="{{$throat}}">
+         <label>{{ $v }}
+         <input class="form-check-input" type="radio" name="throat" value="{{ $v }}">
         </div>      
       @endforeach
 </div>
-    
-     
-　　<!--ただ選択できるだけ？データをコントローラーに渡さないといけないはず-->
     <button type="submit" class="btn btn-outline-primary">送信</button>
 </form>
 

@@ -14,12 +14,12 @@ class CreateBeersTable extends Migration
     public function up()
     {
         Schema::create('beers', function (Blueprint $table) {
-            // 
+             
             $table->bigIncrements('id');
             $table->string("name");
             $table->string("manufacturer")->nullable();
             $table->text("memo");
-            $table->string("image_url")->nullable();
+            $table->string("image_url")->default('');
             
             $table->integer("sharpness");
             $table->integer("body");
@@ -30,8 +30,10 @@ class CreateBeersTable extends Migration
           
             
             $table->timestamps();
-        });
-
+       });
+    }
+    
+    
     /**
      * Reverse the migrations.
      *
@@ -43,4 +45,6 @@ class CreateBeersTable extends Migration
         Schema::dropIfExists('beers');
     }
 }
+
+
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Beer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BeerController extends Controller
 {
@@ -56,7 +57,7 @@ class BeerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    // データの保存場所
+    // 新規作成のデータ管理場所
     
     {
         $beer = new Beer();
@@ -73,6 +74,14 @@ class BeerController extends Controller
         $beer->aroma = $request->input('aroma');
         $beer->flavor = $request->input('flavor');
         $beer->throat = $request->input('throat');
+        
+        if ($request->file('image_url') !== null) {
+            $image_url = $request->file('image_url')-> store('beers');
+            $beer->image_url = basename($image_url);
+        } else {
+            $beer->image_url = '';
+        }
+        
         $beer->save();
         
         return redirect()->route('beers.show',['id' => $beer->id])->with('message', 'Beer was successfully created.');
@@ -148,6 +157,14 @@ class BeerController extends Controller
         $beer->aroma = $request->input('aroma');
         $beer->flavor = $request->input('flavor');
         $beer->throat = $request->input('throat');
+        
+        if ($request->hasFile('image_url')) {
+            $image_url = $request->file('image_url')-> store('public/beers');
+            $beer->image_url = basename($image_url);
+        } else {
+            $beer->image_url = '';
+        }
+        
         $beer->save();
         
         return redirect()->route("beers.show",['id' => $beer->id])->with('message', 'Beer was successfully updated.');
