@@ -13,7 +13,7 @@
 <!--bootstrap4の導入-->
 
 <h1>Beeeeeeeeer!</h1>
-
+       
 @foreach($beers as $beer)
 
     <div class="card">
@@ -33,16 +33,31 @@
             <a href="/beers/{{ $beer->id }}/edit" class="btn btn-outline-primary">Edit</a>
              <!--/beers/:id/editとshowへのリンク btn-outline-primaryでボタンの色が変わるというおしゃれなセレクター-->
         </div>
-        </div>
-    </div>
+   
     <!--/beers/:id/editへのリンク-->
     
-    <form action="/beers/{{ $beer->id }}" method="POST" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else { return false };">
-        <input type="hidden" name="_method" value="DELETE">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        <button type="submit">Delete</button>
-        <!--ここにもボタンが変わるセレクター入れました、と。-->
-    </form>
+    
+        
+        <td>
+            <div class="gazou">
+          @if ($beer->image_url !== "")
+            <img src="{{ asset('storage/beers/'.$beer->image_url) }}" class="img-thumbnail">
+             @else
+            <img src="{{ asset('img/dummy.png')}}" class="img-thumbnail">
+          @endif
+            </div>
+        </td>
+        <!--本来foreach だが、繰り返す処理が無い。変数の値がおかしい。-->
+    
+    
+    
+    
+        <form action="/beers/{{ $beer->id }}" method="POST" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else { return false };">
+          <input type="hidden" name="_method" value="DELETE">
+          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+          <button type="submit">Delete</button>
+          <!--ここにもボタンが変わるセレクター入れました、と。-->
+        </form>
     <!--formタグ使ってBeerContollerのdestroyアクションへDELETEリクエストを送る。疑問、なぜこれでコントローラーにDELETEリクエストが送られるのか？-->
     <!-- indexだから？-->
     

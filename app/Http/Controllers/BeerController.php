@@ -150,7 +150,6 @@ class BeerController extends Controller
         $beer->name = $request->input("name");
         $beer->memo = $request->input("memo");
         $beer->manufacturer = $request->input('manufacturer');
-        $beer->image_url = $request->input('image_url');
         
         $beer->sharpness = $request->input('sharpness');
         $beer->body = $request->input('body');
@@ -159,10 +158,8 @@ class BeerController extends Controller
         $beer->throat = $request->input('throat');
         
         if ($request->hasFile('image_url')) {
-            $image_url = $request->file('image_url')-> store('public/beers');
+            $image_url = $request->file('image_url')->store('public/beers');
             $beer->image_url = basename($image_url);
-        } else {
-            $beer->image_url = '';
         }
         
         $beer->save();

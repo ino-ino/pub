@@ -10838,6 +10838,9 @@ a.text-dark:focus {
   tr,
   img {
     page-break-inside: avoid;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
   }
 
   p,
@@ -10903,3 +10906,8 @@ a.text-dark:focus {
   }
 }
 
+ .gazou{
+   width: 250px;
+   height: 250px;
+ 
+}
