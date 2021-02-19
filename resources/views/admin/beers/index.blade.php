@@ -1,4 +1,4 @@
-@extends('layouts.layouts')
+@extends('layouts.admin.layouts')
 <!--使用するレイアウトのファイルの宣言-->
 
 @section('title', 'Simple Board')

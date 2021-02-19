@@ -10838,9 +10838,6 @@ a.text-dark:focus {
   tr,
   img {
     page-break-inside: avoid;
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
   }
 
   p,
@@ -10906,8 +10903,90 @@ a.text-dark:focus {
   }
 }
 
- .gazou{
-   width: 250px;
-   height: 250px;
- 
+.card-container {
+  display: flex;
 }
+
+.card {
+  width: 300px;
+}
+
+html {
+  font-size: 15px;
+}
+
+body {
+  background-image: url(/images/1.png);
+}
+
+.img-thumbnail {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100px;
+  height: 100px;
+}
+
+.navbar-toggler {
+  background-color: #F2DB8D;
+}
+
+.bg-light {
+  background-color: #F2DB8D !important;
+}
+
+button:focus {
+  outline: none;
+}
+
+.card {
+  background-color: transparent;
+  border: none;
+}
+
+.btn {
+  position: relative;
+  display: inline-table;
+  font-weight: bold;
+  padding: 5px 5px 5px;
+  text-decoration: none;
+  color: #E89845;
+  transition: 0.4s;
+  font-size: 0.5rem;
+}
+
+.btn:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 4px;
+  top: 100%;
+  left: 0;
+  border-radius: 3px;
+  background: #E89845;
+  transition: 0.2s;
+}
+
+.btn:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 4px;
+  top: 0;
+  left: 0;
+  border-radius: 3px;
+  background: #E89845;
+  transition: 0.2s;
+}
+
+.btn:hover:before {
+  top: calc(100% - 3px);
+}
+
+.btn:hover:after {
+  top: 3px;
+}
+
+.btn-outline-primary {
+  border-color: transparent;
+}
+

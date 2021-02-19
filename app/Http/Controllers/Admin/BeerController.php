@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Beer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -38,7 +39,7 @@ class BeerController extends Controller
         }
         
        
-        return view("beers.index",compact('beers','memo','name','keyword'));
+        return view("admin.beers.index",compact('beers','memo','name','keyword'));
   
     }
 
@@ -56,7 +57,7 @@ class BeerController extends Controller
         $throat = Beer::$throat;
        
         
-        return view("beers.create",compact('beer','sharpness','body','aroma','flavor','throat'));
+        return view("admin.beers.create",compact('beer','sharpness','body','aroma','flavor','throat'));
     }
 
     /**
@@ -95,7 +96,7 @@ class BeerController extends Controller
         
         $beer->save();
         
-        return redirect()->route('beers.show',['id' => $beer->id])->with('message', 'Beer was successfully created.');
+        return redirect()->route('admin.beers.show',['id' => $beer->id])->with('message', 'Beer was successfully created.');
     }
 
     /**
@@ -119,7 +120,7 @@ class BeerController extends Controller
         $throat = Beer::$throat;
     
         
-        return view('beers.show',compact ('beer','sharpness','body','aroma','flavor','throat'));
+        return view('admin.beers.show',compact ('beer','sharpness','body','aroma','flavor','throat'));
         // compact()でビューに変数を渡す
         // 
     }
@@ -145,7 +146,7 @@ class BeerController extends Controller
         // array()が省略されているだけ。これが連想配列。sharpnessに紐つけてあるのがBeerモデルの$sharpnessの値
         
         
-        return view("beers.edit",compact('beer','sharpness','body','aroma','flavor','throat'));
+        return view("admin.beers.edit",compact('beer','sharpness','body','aroma','flavor','throat'));
         
     }
 
@@ -175,7 +176,7 @@ class BeerController extends Controller
         
         $beer->save();
         
-        return redirect()->route("beers.show",['id' => $beer->id])->with('message', 'Beer was successfully updated.');
+        return redirect()->route("admin.beers.show",['id' => $beer->id])->with('message', 'Beer was successfully updated.');
     }
 
     /**
@@ -188,6 +189,6 @@ class BeerController extends Controller
     {
         $beer->delete();
         
-        return redirect()->route("beers.index");
+        return redirect()->route("admin.beers.index");
     }
 }
