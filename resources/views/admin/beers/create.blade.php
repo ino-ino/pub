@@ -1,4 +1,6 @@
-@extends('layouts.layouts')
+<!--Admin-->
+
+@extends('layouts.admin.layouts')
 
 @section('title', 'Simple Board')
 

@@ -1,10 +1,11 @@
+<!--不要-->
+
 @extends('layouts.layouts')
 
 @section('title', 'Simple Board')
 
 @section('content')
 
-<h1>New Post</h1>
 
 <form method="POST" action="/beers" enctype="multipart/form-data">
     <!--actionの/beersはAWSプレビューのアドレスの後ろにつけるやつ-->

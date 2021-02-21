@@ -40,12 +40,8 @@
          <form action="/beers/{{ $beer->id }}" method="POST" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else { return false };">
             <div class="d-flex" style="height: 36.4px;">
            
-            <a href="/beers/{{ $beer->id }}" class="btn btn-outline-primary">Show</a>
-            <a href="/beers/{{ $beer->id }}/edit" class="btn btn-outline-primary">Edit</a>
-            </div>
-         　 <input type="hidden" name="_method" value="DELETE">
-     　　     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-     　　     <button type="submit" class="btn btn-outline-primary">Delete</button>
+            <a href="/beers/{{ $beer->id }}" class="btn">{{ $beer->name }}</a>
+          
      　    
           
         </form>
@@ -66,7 +62,5 @@
 
  
    
-
-<a href ="/beers/create">new</a>
 
 @endsection

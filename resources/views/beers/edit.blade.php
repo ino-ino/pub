@@ -1,3 +1,5 @@
+<!--不要-->
+
 @extends('layouts.layouts')
 
 @section('title', 'Simple Board')
