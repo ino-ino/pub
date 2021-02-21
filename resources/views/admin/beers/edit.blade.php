@@ -8,6 +8,8 @@
 
 <h1>Editing Post</h1>
 
+<style background="none"></style>
+
 <form method="POST" action="/beers/{{ $beer->id }}" enctype="multipart/form-data">
     <!--アクションされるのは/beers/の$beer->id-->
     {{ csrf_field() }}

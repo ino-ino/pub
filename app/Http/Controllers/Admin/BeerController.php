@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+// ファイル位置
 
 use App\Http\Controllers\Controller;
+// 変更　ファイル位置相違の為
+
 use App\Beer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;

@@ -19,11 +19,6 @@ class BeerController extends Controller
     public function index(Request $request)
     {
         
-        //   echo "<pre>";
-        //  print_r($beers);
-        //   echo "</pre>";
-        //   exit(1);
-        
         $name = $request->input('keyword');
          
         if(!empty($name))

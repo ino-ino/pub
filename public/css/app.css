@@ -10988,6 +10988,9 @@ button:focus {
 
 .btn-outline-primary {
   border-color: transparent;
-  position: center;
+}
+
+.card {
+  display: contents;
 }
 
