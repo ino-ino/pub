@@ -8,7 +8,7 @@
 
 <h1>New Post</h1>
 
-<form method="POST" action="admin/beers" enctype="multipart/form-data">
+<form method="GET" action="/admin/beers" enctype="multipart/form-data">
     <!--actionの/beersはAWSプレビューのアドレスの後ろにつけるやつ-->
     {{ csrf_field() }}
     <!--データ保護、getやpostの通信設定の際は必ず入れたほうが良さそう-->
@@ -102,6 +102,7 @@
 　　　</div>
 　　　
     <button type="submit" class="btn btn-outline-primary">送信</button>
+    <!--原因これ？-->
 </form>
 
 

@@ -10,7 +10,7 @@
 
 <style background="none"></style>
 
-<form method="POST" action="/beers/{{ $beer->id }}" enctype="multipart/form-data">
+<form method="POST" action="/admin/beers/{{ $beer->id }}" enctype="multipart/form-data">
     <!--アクションされるのは/beers/の$beer->id-->
     {{ csrf_field() }}
     <input type="hidden" name="_method" value="PUT">
@@ -118,8 +118,8 @@
 　　　<input type="submit" class="btn btn-outline-primary">
 </form>
 
-<a href="/beers/{{ $beer->id }}">Show</a>
-<a href="/beers">Back</a>
+<a href="/admin/beers/{{ $beer->id }}">Show</a>
+<a href="/admin/beers">Back</a>
 
 
 

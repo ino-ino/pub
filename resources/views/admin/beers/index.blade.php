@@ -11,7 +11,7 @@
         {{ session('message') }}
     @endif
 <!--bootstrap4の導入-->
-
+{{ 'id' }}
 
 
 <div class="card-container">
@@ -37,11 +37,11 @@
         
       
    
-         <form action="/beers/{{ $beer->id }}" method="POST" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else { return false };">
+         <form action="/admin/beers/{{ $beer->id }}" method="POST" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else { return false };">
             <div class="d-flex" style="height: 36.4px;">
            
-            <a href="/beers/{{ $beer->id }}" class="btn btn-outline-primary">Show</a>
-            <a href="/beers/{{ $beer->id }}/edit" class="btn btn-outline-primary">Edit</a>
+            <a href="/admin/beers/{{ $beer->id }}" class="btn btn-outline-primary">Show</a>
+            <a href="/admin/beers/{{ $beer->id }}/edit" class="btn btn-outline-primary">Edit</a>
             </div>
          　 <input type="hidden" name="_method" value="DELETE">
      　　     <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -67,6 +67,6 @@
  
    
 
-<a href ="/beers/create">new</a>
+<a href ="/admin/beers/create">new</a>
 
 @endsection
