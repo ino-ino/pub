@@ -64,6 +64,7 @@ class BeerController extends Controller
     // 新規作成のデータ管理場所
     
     {
+      
         $beer = new Beer();
         // beerインスタンスを作成している
         $beer->name = $request->input('name');

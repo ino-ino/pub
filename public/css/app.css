@@ -10903,47 +10903,51 @@ a.text-dark:focus {
   }
 }
 
-.card-container {
+#frontend .card-container {
   display: flex;
 }
 
-.card {
+#frontend .card {
   width: 300px;
 }
 
-html {
+#frontend html {
   font-size: 15px;
 }
 
-body {
+#frontend body {
   background-image: url(/images/4.png);
 }
 
-.img-thumbnail {
+#frontend .img-thumbnail {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100px;
   height: 100px;
 }
 
-.navbar-toggler {
+#frontend .navbar-toggler {
   background-color: #F2DB8D;
 }
 
-.bg-light {
-  background-color: #F2DB8D !important;
+#frontend .navbar {
+  display: block;
 }
 
-button:focus {
+#frontend .bg-light {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+#frontend button:focus {
   outline: none;
 }
 
-.card {
+#frontend .card {
   background-color: transparent;
   border: none;
 }
 
-.btn {
+#frontend .btn {
   position: relative;
   display: inline-table;
   font-weight: bold;
@@ -10954,7 +10958,7 @@ button:focus {
   font-size: 0.5rem;
 }
 
-.btn:before {
+#frontend .btn:before {
   position: absolute;
   content: "";
   width: 100%;
@@ -10966,7 +10970,7 @@ button:focus {
   transition: 0.2s;
 }
 
-.btn:after {
+#frontend .btn:after {
   position: absolute;
   content: "";
   width: 100%;
@@ -10978,19 +10982,50 @@ button:focus {
   transition: 0.2s;
 }
 
-.btn:hover:before {
+#frontend .btn:hover:before {
   top: calc(100% - 3px);
 }
 
-.btn:hover:after {
+#frontend .btn:hover:after {
   top: 3px;
 }
 
-.btn-outline-primary {
+#frontend .btn-outline-primary {
   border-color: transparent;
 }
 
-.card {
+#frontend .card {
   display: contents;
+}
+
+#frontend h1 {
+  float: left;
+  padding: 6px 0;
+}
+
+#frontend h1 a {
+  display: block;
+  width: 64px;
+  height: 69px;
+  font-size: 0;
+  background: url(/images/logo.png) left top/64px auto no-repeat;
+}
+
+#frontend .btn-outline-success {
+  border-color: rgba(0, 0, 0, 0);
+}
+
+#frontend .form-inline {
+  display: block;
+  float: right;
+}
+
+#frontend .card-img-overlay {
+  background: url(/images/beer-walker.png) no-repeat;
+}
+
+#frontend .card-body {
+  margin-top: 300;
+  margin-left: 600;
 }
 

@@ -1,3 +1,4 @@
+
 @extends('layouts.layouts')
 <!--使用するレイアウトのファイルの宣言-->
 
@@ -14,13 +15,29 @@
 
 
 
+<div class="card-container pt-5 pb-5" style="height: 650px; background: url(/images/beer-background.png);">
+     
+  <div class="card-container">
+      <div class="card">
+          <div class="card-body">
+              
+              
+          </div>
+      </div>
+  </div>
+</div>
+
+
+    
+
+
 <div class="card-container">
 
 @foreach($beers as $beer)
     
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">{{ $beer->name }}</h5>
+          
         　
          <td>
              <div class="col-9">

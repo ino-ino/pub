@@ -11,12 +11,14 @@
         {{ session('message') }}
     @endif
 <!--bootstrap4の導入-->
-{{ 'id' }}
 
 
 <div class="card-container">
 
 @foreach($beers as $beer)
+
+    
+    
     
     <div class="card">
         <div class="card-body">

@@ -1,4 +1,4 @@
-<html>
+<html id="admin">
     <head>
         <title>@yield('title')</title>
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -13,11 +13,11 @@
             @endcomponent
             @yield('content')
         </div>
-        
-        @component('components.footer')
-        @endcomponent
 
          <script src="{{ mix('js/app.js') }}"></script>
+         
+        
+         
     </body>
 </html> 
 

@@ -11,6 +11,9 @@
     {{ session('message') }}
 @endif
 
+ <div class="card-img-overlay">
+
+
  <div class="card">
         <div class="card-body">
             <h5 class="card-title">{{ $beer->name }}</h5>
@@ -26,7 +29,7 @@
             <p class='card-text'>味わい{{ $beer->flavor }}</p>
             <p class='card-text'>のどごし{{ $beer->throat }}</p>
                 <!--ラジオボタンの意味が無い。-->
-           
+           <a href="/beers" class="btn">Back</a>
         </div>
 
 　</div>
@@ -37,7 +40,7 @@
 <!--新しい投稿をするとshowアクションが呼び出しされる。作成した内容が表示される-->
 
 
-<a href="/beers" class="btn">Back</a>
+
 <!--各投稿の閲覧ページからも編集画面へ移動できるよう-->
 
 @endsection
