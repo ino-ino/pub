@@ -1,7 +1,5 @@
-
 @extends('layouts.layouts')
-<!--使用するレイアウトのファイルの宣言-->
-
+ 
 @section('title', 'Simple Board')
 <!-- layouts.blade.php内に定義している yield title に埋め込むというコード-->
 
@@ -15,17 +13,9 @@
 
 
 
-<div class="card-container pt-5 pb-5" style="height: 650px; background: url(/images/beer-background.png);">
-     
-  <div class="card-container">
-      <div class="card">
-          <div class="card-body">
-              
-              
-          </div>
-      </div>
-  </div>
-</div>
+
+  <img src="/images/beer-background.png" class="card-img" alt="...">
+ 
 
 
     

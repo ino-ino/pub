@@ -1,6 +1,4 @@
 
-
-
 @extends('layouts.layouts')
 
 @section('title', 'Simple Board')
@@ -11,36 +9,31 @@
     {{ session('message') }}
 @endif
 
- <div class="card-img-overlay">
+
+    
+  <div class="card-img-overlay">
+    <img src="/images/oimonoomoi-2.png" class="card-img" alt="...">
+  </div>
 
 
  <div class="card">
-        <div class="card-body">
+        <div class="card-body show">
             <h5 class="card-title">{{ $beer->name }}</h5>
             <p class="card-text">{{ $beer->memo }}</p>
             <p class="card-text">{{ $beer->manufacturer }}</p>
             <!--<p class="card-text">{{ $beer->image_url }}</p>-->
     
-               <!--sharpnessの値は来ているけど？-->
-            <p class="card-text">キレ{{ $beer->sharpness }} </p>
-                <!--こちら側が$beer->sharpnessだからだ-->
-            <p class="card-text">コク{{ $beer->body }}</p>
-            <p class="card-text">香り{{ $beer->aroma }}</p>
-            <p class='card-text'>味わい{{ $beer->flavor }}</p>
-            <p class='card-text'>のどごし{{ $beer->throat }}</p>
-                <!--ラジオボタンの意味が無い。-->
+            <p class="card-text">キレ @foreach ( range(1,$beer->sharpness) as $number ) ★ @endforeach </p>
+            <p class="card-text">コク @foreach ( range(1,$beer->body) as $number ) ★ @endforeach </p>
+            <p class="card-text">香り @foreach ( range(1,$beer->aroma) as $number ) ★ @endforeach </p>
+            <p class="card-text">味わい @foreach ( range(1,$beer->flavor) as $number ) ★ @endforeach </p>
+            <p class="card-text">のどごし @foreach ( range(1,$beer->throat) as $number ) ★ @endforeach </p>
+   
            <a href="/beers" class="btn">Back</a>
         </div>
 
 　</div>
-  
-           
-        </div>
-    
-<!--新しい投稿をするとshowアクションが呼び出しされる。作成した内容が表示される-->
 
 
-
-<!--各投稿の閲覧ページからも編集画面へ移動できるよう-->
 
 @endsection

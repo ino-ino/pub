@@ -11005,10 +11005,10 @@ a.text-dark:focus {
 
 #frontend h1 a {
   display: block;
-  width: 64px;
-  height: 69px;
+  width: 300px;
+  height: 300px;
   font-size: 0;
-  background: url(/images/logo.png) left top/64px auto no-repeat;
+  background: url(/images/logo.png) left top no-repeat;
 }
 
 #frontend .btn-outline-success {
@@ -11021,11 +11021,26 @@ a.text-dark:focus {
 }
 
 #frontend .card-img-overlay {
-  background: url(/images/beer-walker.png) no-repeat;
+  width: 35rem;
+  margin-top: 50px;
+  margin-left: 5rem;
+}
+
+#frontend .row {
+  display: contents;
+}
+
+#frontend .d-flex {
+  flex-direction: column;
 }
 
 #frontend .card-body {
-  margin-top: 300;
-  margin-left: 600;
+  text-align: -webkit-center;
+}
+
+#frontend .show {
+  font-family: wawati SC;
+  margin-left: 20rem;
+  margin-top: 8rem;
 }
 

@@ -113,9 +113,12 @@ class BeerController extends Controller
         $aroma = Beer::$aroma;
         $flavor = Beer::$flavor;
         $throat = Beer::$throat;
+        
+        
+        
     
         
-        return view('beers.show',compact ('beer','sharpness','body','aroma','flavor','throat'));
+        return view('beers.show',compact ('number','beer','sharpness','body','aroma','flavor','throat'));
         // compact()でビューに変数を渡す
         // 
     }
