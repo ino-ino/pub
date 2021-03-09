@@ -10922,8 +10922,11 @@ a.text-dark:focus {
 #frontend .img-thumbnail {
   -o-object-fit: cover;
      object-fit: cover;
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 400px;
+  background-color: transparent;
+  border: transparent;
+  padding: unset;
 }
 
 #frontend .navbar-toggler {
@@ -10932,6 +10935,8 @@ a.text-dark:focus {
 
 #frontend .navbar {
   display: block;
+  position: fixed;
+  z-index: 1;
 }
 
 #frontend .bg-light {
@@ -11022,8 +11027,8 @@ a.text-dark:focus {
 
 #frontend .card-img-overlay {
   width: 35rem;
-  margin-top: 50px;
-  margin-left: 5rem;
+  margin-top: 10rem;
+  margin-left: 10rem;
 }
 
 #frontend .row {
@@ -11036,11 +11041,32 @@ a.text-dark:focus {
 
 #frontend .card-body {
   text-align: -webkit-center;
+  flex: none;
+  padding: 1rem;
 }
 
 #frontend .show {
-  font-family: wawati SC;
+  font-family: nicoca;
   margin-left: 20rem;
   margin-top: 8rem;
+}
+
+#frontend .size {
+  margin-top: 30px;
+}
+
+#frontend .pb-5,
+#frontend .py-5 {
+  position: absolute;
+}
+
+#frontend .card-img {
+  width: auto;
+}
+
+#frontend .col-9 {
+  max-width: none;
+  padding-right: unset;
+  padding-left: unset;
 }
 

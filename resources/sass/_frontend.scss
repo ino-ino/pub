@@ -19,8 +19,11 @@
 
     .img-thumbnail {
         object-fit: cover;
-        width: 100px;
-        height: 100px;
+        width: 200px;
+        height: 400px;
+        background-color: transparent;
+        border: transparent;
+        padding: unset;
     }
 
     .navbar-toggler {
@@ -29,6 +32,9 @@
     
     .navbar{
         display: block;
+        position: fixed;
+        z-index: 1;
+        
     }
 
     .bg-light {
@@ -122,8 +128,8 @@
 	
     .card-img-overlay{
         width: 35rem;
-        margin-top: 50px;
-        margin-left: 5rem;
+        margin-top: 10rem;
+        margin-left: 10rem;
     }
     
     .row{
@@ -136,10 +142,12 @@
     
     .card-body{
         text-align: -webkit-center;
+        flex: none;
+        padding: 1rem;
     }
     
     .show{
-        font-family: wawati SC;
+        font-family: nicoca;
         margin-left: 20rem;
         margin-top: 8rem;
     }
@@ -148,5 +156,17 @@
         margin-top: 30px;
     }
     
+    .pb-5,.py-5{
+        position: absolute;
+    }
 
+    .card-img{
+        width: auto;
+    }
+    
+    .col-9{
+        max-width: none;
+        padding-right: unset;
+        padding-left: unset;
+    }
 }

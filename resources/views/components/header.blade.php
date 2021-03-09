@@ -1,7 +1,7 @@
 <nav class="navbar bg-light">
   <a class="navbar-brand" href="/"></a>
   
-  <h1><a><href="/"></a></h1>
+  <h1><a href="/"></a></h1>
   
   
    <form class="form-inline my-2 my-lg-0">
